@@ -86,6 +86,12 @@ st.markdown(
         color: #000;
         background-color: #F0ECE1;
     }
+
+    #dr-aliya-s-diagnosis{
+        color: #000;
+        background-color: #F0ECE1;
+    }
+
     </style>
     """,
     unsafe_allow_html=True
