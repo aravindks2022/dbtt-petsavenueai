@@ -6,6 +6,17 @@ from openai import OpenAI
 api_key = st.secrets["openai_apikey"]
 assistant_id = st.secrets["assistant_id"]
 
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f0f2f6; /* Change the color to your desired background color */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 @st.cache_resource
 def load_openai_client_and_assistant():
     client = OpenAI(api_key=api_key)
@@ -61,7 +72,7 @@ def submit():
 
 st.title("Pets Avenue AI Chatbot for Diagnosis")
 
-st.text_input("Hi! My name is AraQueen - the extremely smart AI Doctor! and I am here to help diagnose your pet! Please input your pet's symptoms. Be as detailed as possible!", key='query', on_change=submit)
+st.text_input("Hi! My name is Aliya! - the extremely smart AI Doctor! and I am here to help diagnose your pet! Please input your pet's symptoms. Be as detailed as possible!", key='query', on_change=submit)
 
 user_input = st.session_state.user_input
 
@@ -71,5 +82,5 @@ print(user_input)
 
 if user_input:
     result = get_assistant_response(user_input)
-    st.header("Dr. Araqueen's Diagnosis", divider="rainbow")
+    st.header("Dr. Aliya's Diagnosis", divider="rainbow")
     st.write(result)
