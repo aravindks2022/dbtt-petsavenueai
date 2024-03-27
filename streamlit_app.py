@@ -6,16 +6,7 @@ from openai import OpenAI
 api_key = st.secrets["openai_apikey"]
 assistant_id = st.secrets["assistant_id"]
 
-st.markdown(
-    """
-    <style>
-    body {
-        background-color: #f0f2f6; /* Change the color to your desired background color */
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
+
 
 @st.cache_resource
 def load_openai_client_and_assistant():
@@ -78,9 +69,20 @@ user_input = st.session_state.user_input
 
 st.write("You entered: ", user_input)
 
-print(user_input)
-
 if user_input:
     result = get_assistant_response(user_input)
     st.header("Dr. Aliya's Diagnosis", divider="rainbow")
     st.write(result)
+
+##Design
+st.markdown(
+    """
+    <style>
+    .appview-container, h1, p, stHeadingContainer {
+        color: #000;
+        background-color: #F0ECE1;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
