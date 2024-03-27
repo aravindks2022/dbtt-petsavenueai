@@ -78,7 +78,7 @@ if user_input:
 st.markdown(
     """
     <style>
-    .appview-container, h1, p, stHeadingContainer {
+    .appview-container, h1, p, .stHeadingContainer {
         color: #000;
         background-color: #F0ECE1;
     }
