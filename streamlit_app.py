@@ -1,3 +1,4 @@
+import re
 import streamlit as st
 import time
 from openai import OpenAI
@@ -44,7 +45,12 @@ def get_assistant_response(user_input=""):
         thread_id = assistant_thread.id, order="asc", after=message.id
     )
 
-    return messages.data[0].content[0].text.value
+    message_data = messages.data[0].content[0].text.value
+
+    ## Remove anything in [] brackets to remove source
+    message_data = re.sub(r'\[.*?\]', '', message_data)
+
+    return message_data
 
 if "user_input" not in st.session_state:
     st.session_state.user_input = ''
