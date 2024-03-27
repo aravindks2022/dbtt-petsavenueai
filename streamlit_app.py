@@ -82,6 +82,10 @@ st.markdown(
         color: #000;
         background-color: #F0ECE1;
     }
+    body{
+        color: #000;
+        background-color: #F0ECE1;
+    }
     </style>
     """,
     unsafe_allow_html=True
